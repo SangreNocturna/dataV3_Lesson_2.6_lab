@@ -6,7 +6,8 @@ GROUP BY last_name
 having count(*)=1;
  
 -- 2. Which last names appear more than once? We would use the same logic as in the previous question but this time we want to include the last names of the actors where the last name was present more than once
-select distinct first_name, last_name, count(*) from sakila.actor
+select distinct last_name, count(*) from sakila.actor
+GROUP BY last_name
 having count(*)>1;
  
 -- 3. Using the rental table, find out how many rentals were processed by each employee
